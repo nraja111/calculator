@@ -116,7 +116,7 @@ function apends(vals){
 let lol = false;
 
 function execs(){
-    let sum = 0; // Declare sum here
+    let sum = 0; 
 
     const examp = document.querySelector(".previous");
     const examp2 = document.querySelector(".current");
@@ -139,6 +139,10 @@ function execs(){
         second = first;
         examp.textContent = examp2.textContent;
         examp2.textContent = "";
+
+        if(examp.textContent.includes("/")==0 || examp.textContent.includes("-")==0 || examp.textContent.includes("+")==0 || examp.textContent.includes("*")==0 ){
+            examp.textContent = examp.textContent + opp;
+        }
         examp.textContent = examp.textContent + second;
     } else {
         examp.textContent = examp.textContent + examp2.textContent;
@@ -196,7 +200,7 @@ const clear = document.querySelector('.clr');
         lol = false;
         firstrun=false;
         first = "", second = "";
-        opp = "";
+        opp = false;
         decused = false;
         oppused = false;
         fr = true;
